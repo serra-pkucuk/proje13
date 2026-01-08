@@ -20,7 +20,7 @@ Bu proje, şehir genelindeki hava kalitesi sensörlerinden gelen verileri analiz
 * **Kişi 2:** Hash Tablosu ve Zaman Serileri
 * **Kişi 3:** Hotspot Tespit Algoritmaları (DFS/BFS)
 * **Kişi 4:** Heap Yapısı ve Odak Takibi
-* **Serra Pehlivanküçük (ID: 2024070211):** Entegrasyon, Dosya I/O ve Uyarı Sistemi
+* **Serra Pehlivanküçük (ID: 20240702111):** Entegrasyon, Dosya I/O ve Uyarı Sistemi
 
 ---
 
