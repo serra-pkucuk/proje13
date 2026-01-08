@@ -1,0 +1,15 @@
+{
+  "adjacency_distance": 2.5,
+  "sensors": [
+    { "id": "S1", "x": 0.0, "y": 0.0, "population_nearby": 5000 },
+    { "id": "S2", "x": 1.0, "y": 0.0, "population_nearby": 3000 },
+    { "id": "S3", "x": 0.5, "y": 1.0, "population_nearby": 8000 },
+    { "id": "S4", "x": 5.0, "y": 5.0, "population_nearby": 200 }
+  ],
+  "readings": [
+    { "sensor": "S1", "timestamp": "2026-01-08T12:00", "pm25": 155, "ozone": 40, "no2": 20 },
+    { "sensor": "S2", "timestamp": "2026-01-08T12:00", "pm25": 160, "ozone": 45, "no2": 25 },
+    { "sensor": "S3", "timestamp": "2026-01-08T12:00", "pm25": 50, "ozone": 30, "no2": 10 },
+    { "sensor": "S4", "timestamp": "2026-01-08T12:00", "pm25": 10, "ozone": 10, "no2": 5 }
+  ]
+}
