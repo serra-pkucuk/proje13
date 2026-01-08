@@ -16,11 +16,11 @@ Bu proje, şehir genelindeki hava kalitesi sensörlerinden gelen verileri analiz
 **Önemli Not:** Bu projede std::vector, std::map gibi STL konteynerleri yasaklanmıştır. Tüm veri yapıları (Graf, Hash Tablosu, Heap, Bağlı Liste) ekip tarafından pointer tabanlı olarak sıfırdan geliştirilmiştir.
 
 ### Grup Üyeleri ve Görev Dağılımı
-* **Ceyda Şenay (ID: 20230702122):** Graf Yapısı (Graph) ve Görselleştirme
-* **Hatice Aygan (ID: 20230702004):** Hash Tablosu ve Zaman Serileri
-* **Merve Naz Dikme (ID: 20240702031):** Hotspot Tespit Algoritmaları (DFS/BFS)
-* **Irmak Zehra Emri (ID: 20230703016-072):** Heap Yapısı ve Odak Takibi
-* **Serra Pehlivanküçük (ID: 20240702111):** Entegrasyon, Dosya I/O ve Uyarı Sistemi
+* **Ceyda Şenay (ID: 20230702122):** Veri Yapıları Mimarı
+* **Hatice Aygan (ID: 20230702004):** Zaman Serisi ve Bellek Yönetimi Uzmanı
+* **Merve Naz Dikme (ID: 20240702031):** Algoritma ve Çekirdek Mantık Geliştiricisi
+* **Irmak Zehra Emri (ID: 20230703016-072):** Arayüz ve Görselleştirme Geliştiricisi
+* **Serra Pehlivanküçük (ID: 20240702111):** Dosya I/O, Test ve Entegrasyon Sorumlusu
 
 ---
 
