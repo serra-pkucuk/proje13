@@ -1,53 +1,38 @@
-# CSE 211 - Data Structures Term Project
+# CSE 211 — Data Structures Term Project
 ## PROJ-13: Air Quality Sensor Network & Hotspot Tracker
 
-### Proje Ozeti
-Bu proje, sehir genelindeki hava kalitesi sensorlerinden gelen verileri analiz eden, kirlilik odaklarini (hotspots) tespit eden ve bu odaklarin hareketini zaman icinde izleyen bir sistemdir.
+<div align="center">
+  <img src="https://yeditepe.edu.tr/themes/custom/yeditepe/logo.svg" width="120"/>
+  <br><br>
+  
+  ![Language](https://img.shields.io/badge/Language-C++17-blue)
+  ![Build](https://img.shields.io/badge/Build-Make-green)
+  ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
+</div>
 
-**Onemli Not:** Bu projede std::vector, std::map gibi STL konteynerleri yasaklanmistir. Tum veri yapilari (Graf, Hash Tablosu, Heap, Bagli Liste) ekip tarafindan pointer tabanli olarak sifirdan gelistirilmistir.
+### Proje Özeti
+Bu proje, şehir genelindeki hava kalitesi sensörlerinden gelen verileri analiz eden, kirlilik odaklarını (hotspots) tespit eden ve bu odakların hareketini zaman içinde izleyen bir sistemdir. 
 
-### Grup Uyeleri ve Gorev Dagilimi
-* **Kisi 1:** Graf Yapisi (Graph) ve Gorsellestirme
-* **Kisi 2:** Hash Tablosu ve Zaman Serileri
-* **Kisi 3:** Hotspot Tespit Algoritmalari (DFS/BFS)
-* **Kisi 4:** Heap Yapisi ve Odak Takibi
-* **Serra Pehlivankucuk (ID: 2024070211):** Entegrasyon, Dosya I/O ve Uyari Sistemi (Bu Repo)
+**Önemli Not:** Bu projede `std::vector`, `std::map` gibi STL konteynerleri yasaklanmıştır. Tüm veri yapıları (Graf, Hash Tablosu, Heap, Bağlı Liste) ekip tarafından pointer tabanlı olarak sıfırdan geliştirilmiştir.
+
+### Grup Üyeleri ve Görev Dağılımı
+* **Kişi 1:** Graf Yapısı (Graph) ve Görselleştirme
+* **Kişi 2:** Hash Tablosu ve Zaman Serileri
+* **Kişi 3:** Hotspot Tespit Algoritmaları (DFS/BFS)
+* **Kişi 4:** Heap Yapısı ve Odak Takibi
+* **Serra Pehlivanküçük (ID: 2024070211):** Entegrasyon, Dosya I/O ve Uyarı Sistemi
 
 ---
 
-### Proje Yapisi
+### Proje Yapısı
 
+```text
 project/
 ├── include/
-│   ├── data_structures/  # Ozellestirilmis Veri Yapilari (Graph, HashMap, Heap)
+│   ├── data_structures/  # Özelleştirilmiş Veri Yapıları (Graph, HashMap, Heap)
 │   ├── core/             # Algoritmalar (HotspotDetector, AlertManager)
-│   └── utils/            # Yardimci Araclar (DataLoader)
+│   └── utils/            # Yardımcı Araçlar (DataLoader)
 ├── src/                  # Kaynak Kodlar (.cpp)
 ├── tests/                # Entegrasyon Testleri
-├── data/                 # Ornek JSON Verileri
-└── libs/                 # Harici Kutuphaneler (nlohmann/json)
-
-### Kurulum ve Calistirma
-
-Bu projeyi calistirmak icin terminalde su komutlari sirasiyla uygulayin:
-
-1. Bagimliliklari Yukle (JSON Kutuphanesi):
-make deps
-
-2. Projeyi Derle:
-make
-
-3. Calistir:
-make run
-
-4. Testleri Calistir:
-make test
-
-### Kullanilan Ozel Veri Yapilari
-STL yerine asagidakiler implemente edilmistir:
-1. **SensorGraph:** Adjacency List (Linked List tabanli) kullanan uzamsal ag.
-2. **SensorHashMap:** Chaining Yontemi ile pointer tabanli hash tablosu.
-3. **AlertPriorityQueue:** Pointer tabanli Min-Heap agaci.
-
----
-CSE 211 - Fall 2025-2026
+├── data/                 # Örnek JSON Verileri
+└── libs/                 # Harici Kütüphaneler (nlohmann/json)
