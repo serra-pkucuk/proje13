@@ -13,7 +13,7 @@
 ### Proje Özeti
 Bu proje, şehir genelindeki hava kalitesi sensörlerinden gelen verileri analiz eden, kirlilik odaklarını (hotspots) tespit eden ve bu odakların hareketini zaman içinde izleyen bir sistemdir. 
 
-**Önemli Not:** Bu projede `std::vector`, `std::map` gibi STL konteynerleri yasaklanmıştır. Tüm veri yapıları (Graf, Hash Tablosu, Heap, Bağlı Liste) ekip tarafından pointer tabanlı olarak sıfırdan geliştirilmiştir.
+**Önemli Not:** Bu projede std::vector, std::map gibi STL konteynerleri yasaklanmıştır. Tüm veri yapıları (Graf, Hash Tablosu, Heap, Bağlı Liste) ekip tarafından pointer tabanlı olarak sıfırdan geliştirilmiştir.
 
 ### Grup Üyeleri ve Görev Dağılımı
 * **Kişi 1:** Graf Yapısı (Graph) ve Görselleştirme
