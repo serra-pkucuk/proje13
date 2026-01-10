@@ -10,29 +10,29 @@
   ![Status](https://img.shields.io/badge/Status-In%20Progress-orange)
 </div>
 
-### Proje Özeti
-Bu proje, şehir genelindeki hava kalitesi sensörlerinden gelen verileri analiz eden, kirlilik odaklarını (hotspots) tespit eden ve bu odakların hareketini zaman içinde izleyen bir sistemdir. 
+### Project Summary
+This project is a system designed to analyze data from city-wide air quality sensors, detect pollution hotspots, and track the movement of these hotspots over time.
 
-**Önemli Not:** Bu projede std::vector, std::map gibi STL konteynerleri yasaklanmıştır. Tüm veri yapıları (Graf, Hash Tablosu, Heap, Bağlı Liste) ekip tarafından pointer tabanlı olarak sıfırdan geliştirilmiştir.
+**Important Note:** The use of STL containers (e.g., std::vector, std::map) is strictly prohibited in this project. All data structures (Graph, Hash Table, Heap, Linked List) have been implemented from scratch by the team using pointer-based logic.
 
-### Grup Üyeleri ve Görev Dağılımı
-* **Ceyda Şenay (ID: 20230702122):** Veri Yapıları Mimarı
-* **Hatice Aygan (ID: 20230702004):** Zaman Serisi ve Bellek Yönetimi Uzmanı
-* **Merve Naz Dikme (ID: 20240702031):** Algoritma ve Çekirdek Mantık Geliştiricisi
-* **Irmak Zehra Emri (ID: 20230703016-072):** Arayüz ve Görselleştirme Geliştiricisi
-* **Serra Pehlivanküçük (ID: 20240702111):** Dosya I/O, Test ve Entegrasyon Sorumlusu
+### Team Members & Roles
+* **Ceyda Şenay (ID: 20230702122):** Data Structures 
+* **Hatice Aygan (ID: 20230702004):** Time Series & Memory Management 
+* **Merve Naz Dikme (ID: 20240702031):** Algorithm & Core Logic 
+* **Irmak Zehra Emri (ID: 20230703016-072):** Interface & Visualization 
+* **Serra Pehlivanküçük (ID: 20240702111):** File I/O, Testing, and Integration 
 
 ---
 
-### Proje Yapısı
+### Project Structure
 
-```text
+
 project/
 ├── include/
-│   ├── data_structures/  # Özelleştirilmiş Veri Yapıları (Graph, HashMap, Heap)
-│   ├── core/             # Algoritmalar (HotspotDetector, AlertManager)
-│   └── utils/            # Yardımcı Araçlar (DataLoader)
-├── src/                  # Kaynak Kodlar (.cpp)
-├── tests/                # Entegrasyon Testleri
-├── data/                 # Örnek JSON Verileri
-└── libs/                 # Harici Kütüphaneler (nlohmann/json)
+│   ├── data_structures/  # Custom Data Structures (Graph, HashMap, Heap)
+│   ├── core/             # Algorithms (HotspotDetector, AlertManager)
+│   └── utils/            # Utilities (DataLoader)
+├── src/                  # Source Code (.cpp)
+├── tests/                # Integration Tests
+├── data/                 # Sample JSON Data
+└── libs/                 # External Libraries (nlohmann/json)
