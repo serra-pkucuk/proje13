@@ -3,15 +3,15 @@
 # ============================================================================
 
 # ----------------------------------------------------------------------------
-# 1. Derleyici ve Bayraklar
+# 1. Compiler and Flags
 # ----------------------------------------------------------------------------
 CXX := g++
-# -Ilibs: nlohmann/json kütüphanesini bulması için gerekli
+# -Ilibs: Required to locate the nlohmann/json library
 CXXFLAGS := -std=c++17 -Wall -Wextra -g -Iinclude -Ilibs
 LDFLAGS :=
 
 # ----------------------------------------------------------------------------
-# 2. Klasör Tanımları
+# 2. Directory Definitions
 # ----------------------------------------------------------------------------
 SRC_DIR := src
 INC_DIR := include
@@ -22,32 +22,32 @@ BIN_DIR := $(BUILD_DIR)/bin
 LIBS_DIR := libs
 
 # ----------------------------------------------------------------------------
-# 3. Hedef Dosyalar
+# 3. Target Files
 # ----------------------------------------------------------------------------
 TARGET := $(BIN_DIR)/main
 TEST_TARGET := $(BIN_DIR)/tests
 
-# Kaynak Dosyalar (.cpp)
+# Source Files (.cpp)
 SOURCES := $(shell find $(SRC_DIR) -name '*.cpp')
-# Nesne Dosyaları (.o)
+# Object Files (.o)
 OBJECTS := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SOURCES))
 
-# Test Dosyaları
+# Test Files
 TEST_SOURCES := $(shell find $(TEST_DIR) -name '*.cpp')
 TEST_OBJECTS := $(patsubst $(TEST_DIR)/%.cpp,$(OBJ_DIR)/tests/%.o,$(TEST_SOURCES))
 
-# Test build'i için main.o'yu hariç tut (çakışma olmasın diye)
+# Exclude main.o for the test build (to prevent multiple 'main' definition errors)
 LIB_OBJECTS := $(filter-out $(OBJ_DIR)/main.o, $(OBJECTS))
 
 # ----------------------------------------------------------------------------
-# 4. Varsayılan Hedef (make)
+# 4. Default Target (make)
 # ----------------------------------------------------------------------------
 .PHONY: all
 all: directories $(TARGET)
-	@echo "Derleme tamamlandi: $(TARGET)"
+	@echo "Build complete: $(TARGET)"
 
 # ----------------------------------------------------------------------------
-# 5. Klasör Oluşturma Kuralı
+# 5. Directory Creation Rule
 # ----------------------------------------------------------------------------
 .PHONY: directories
 directories:
@@ -59,36 +59,36 @@ directories:
 	@mkdir -p $(LIBS_DIR)
 
 # ----------------------------------------------------------------------------
-# 6. Bağımlılıkları İndirme Kuralı (make deps) - SENİN GÖREVİN
+# 6. Dependency Download Rule (make deps)
 # ----------------------------------------------------------------------------
 .PHONY: deps
 deps:
-	@echo "Bagimliliklar kontrol ediliyor..."
+	@echo "Checking dependencies..."
 	@mkdir -p $(LIBS_DIR)
 	@if [ ! -f $(LIBS_DIR)/json.hpp ]; then \
-		echo "nlohmann/json kutuphanesi indiriliyor..."; \
+		echo "Downloading nlohmann/json library..."; \
 		curl -sL https://github.com/nlohmann/json/releases/download/v3.11.3/json.hpp -o $(LIBS_DIR)/json.hpp; \
-		echo "Indirme tamamlandi: $(LIBS_DIR)/json.hpp"; \
+		echo "Download complete: $(LIBS_DIR)/json.hpp"; \
 	else \
-		echo "nlohmann/json zaten mevcut."; \
+		echo "nlohmann/json already exists."; \
 	fi
 
 # ----------------------------------------------------------------------------
-# 7. Ana Programı Linkleme
+# 7. Linking Main Program
 # ----------------------------------------------------------------------------
 $(TARGET): $(OBJECTS)
-	@echo "Ana program linkleniyor..."
+	@echo "Linking main program..."
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
 # ----------------------------------------------------------------------------
-# 8. Test Programını Linkleme
+# 8. Linking Test Program
 # ----------------------------------------------------------------------------
 $(TEST_TARGET): $(LIB_OBJECTS) $(TEST_OBJECTS)
-	@echo "Test programi linkleniyor..."
+	@echo "Linking test program..."
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
 # ----------------------------------------------------------------------------
-# 9. Kaynak Kodları Derleme (.cpp -> .o)
+# 9. Compiling Source Code (.cpp -> .o)
 # ----------------------------------------------------------------------------
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
@@ -99,24 +99,24 @@ $(OBJ_DIR)/tests/%.o: $(TEST_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # ----------------------------------------------------------------------------
-# 10. Yardımcı Komutlar
+# 10. Helper Commands
 # ----------------------------------------------------------------------------
-# Programı çalıştır (make run)
+# Run the program (make run)
 .PHONY: run
 run: all
-	@echo "Program calistiriliyor..."
+	@echo "Running program..."
 	@./$(TARGET)
 
-# Testleri çalıştır (make test)
+# Run tests (make test)
 .PHONY: test
 test: directories $(TEST_TARGET)
-	@echo "Testler calistiriliyor..."
+	@echo "Running tests..."
 	@./$(TEST_TARGET)
 
-# Temizlik (make clean)
+# Clean build files (make clean)
 .PHONY: clean
 clean:
-	@echo "Temizlik yapiliyor..."
+	@echo "Cleaning up..."
 	@rm -rf $(BUILD_DIR)
 
 # Memory Check (make memcheck)
